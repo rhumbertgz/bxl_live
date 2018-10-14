@@ -45,26 +45,16 @@ html body {
 .up-left-head,
 .down-left-head   {
     position: absolute; 
-    /* bottom: 0;  */
     margin-left:0px;
     background-size: contain; 
-    /* top:15px; */
-}
-
-.right-head svg, 
-.left-head svg, 
-.up-head svg, 
-.down-head svg,
-.up-right-head svg,
-.down-right-head svg,
-.up-left-head svg,
-.down-left-head svg   {
-    width: 12px; 
-    height: 12px; 
 }
 
 .arrow svg  {
     fill: currentColor;
+    width: 12px; 
+    height: 12px; 
+    margin-left:0px;
+    background-size: contain; 
 }
 
 .up-head.second, 
@@ -85,161 +75,146 @@ html body {
     margin-left: 16px;
 }
 
-
-@keyframes bounceAlpha {
+/* BEGIN right-head */
+@keyframes bounceRight {
   0% {opacity: 1; transform: translateX(0px) scale(1);}
   25%{opacity: 0; transform:translateX(10px) scale(0.9);}
   26%{opacity: 0; transform:translateX(-10px) scale(0.9);}
   55% {opacity: 1; transform: translateX(0px) scale(1);}
 }
-
-@keyframes bounceBeta {
-  0% {opacity: 1; transform: translateX(0px) scale(1);}
-  25%{opacity: 0; transform:translateX(-10px) scale(0.9);}
-  26%{opacity: 0; transform:translateX(10px) scale(0.9);}
-  55% {opacity: 1; transform: translateX(0px) scale(1);}
-}
-
-@keyframes bounceGamma {
-  0% {opacity: 1; transform: translateY(0px) scale(1);}
-  25%{opacity: 0; transform:translateY(-10px) scale(0.9);}
-  26%{opacity: 0; transform:translateY(10px) scale(0.9);}
-  55% {opacity: 1; transform: translateY(0px) scale(1);}
-}
-
-@keyframes bounceOmega {
-  0% {opacity: 1; transform: translateY(0px) scale(1);}
-  25%{opacity: 0; transform:translateY(10px) scale(0.9);}
-  26%{opacity: 0; transform:translateY(-10px) scale(0.9);}
-  55% {opacity: 1; transform: translateY(0px) scale(1);}
-}
-
-.bounceAlpha {
-    animation-name: bounceAlpha;
+.bounceRight {
+    animation-name: bounceRight;
     animation-duration:1.4s;
     animation-iteration-count:infinite;
     animation-timing-function:linear;
 }
-
-.bounceBeta {
-    animation-name: bounceBeta;
-    animation-duration:1.4s;
-    animation-iteration-count:infinite;
-    animation-timing-function:linear;
-}
-
-.bounceGamma {
-    animation-name: bounceGamma;
-    animation-duration:1.4s;
-    animation-iteration-count:infinite;
-    animation-timing-function:linear;
-}
-
-.bounceOmega {
-    animation-name: bounceOmega;
-    animation-duration:1.4s;
-    animation-iteration-count:infinite;
-    animation-timing-function:linear;
-}
-
-.right-head.first.bounceAlpha {
-    animation-name: bounceAlpha;
+.right-head.first.bounceRight {
+    animation-name: bounceRight;
     animation-duration:1.4s;
     animation-delay:0.2s;
     animation-iteration-count:infinite;
     animation-timing-function:linear;
 }
-
 .arrow .right-head{
-    animation-name: bounceAlpha;
+    animation-name: bounceRight;
     animation-duration:1.4s;
     animation-iteration-count:infinite;
     animation-timing-function:linear;
 }
 .arrow .right-head.first{
-    animation-name: bounceAlpha;
+    animation-name: bounceRight;
     animation-duration:1.4s;
     animation-delay:0.2s;
     animation-iteration-count:infinite;
     animation-timing-function:linear;
 }
+/* END right-head */
 
 
-.left-head.third.bounceBeta {
-    animation-name: bounceBeta;
+/* BEGIN left-head */
+@keyframes bounceLeft {
+  0% {opacity: 1; transform: translateX(0px) scale(1);}
+  25%{opacity: 0; transform:translateX(-10px) scale(0.9);}
+  26%{opacity: 0; transform:translateX(10px) scale(0.9);}
+  55% {opacity: 1; transform: translateX(0px) scale(1);}
+}
+.left-head.third.bounceLeft {
+    animation-name: bounceLeft;
     animation-duration:1.4s;
     animation-delay:0.2s;
     animation-iteration-count:infinite;
     animation-timing-function:linear;
 }
-
 .arrow .left-head{
-    animation-name: bounceBeta;
+    animation-name: bounceLeft;
     animation-duration:1.4s;
     animation-iteration-count:infinite;
     animation-timing-function:linear;
 }
 .arrow .left-head.third{
-    animation-name: bounceBeta;
+    animation-name: bounceLeft;
     animation-duration:1.4s;
     animation-delay:0.2s;
     animation-iteration-count:infinite;
     animation-timing-function:linear;
 }
+/* END left-head */
 
-
-.up-head.first.bounceGamma {
-    animation-name: bounceGamma;
+/* BEGIN up-head */
+@keyframes bounceUp {
+  0% {opacity: 1; transform: translateY(0px) scale(1);}
+  25%{opacity: 0; transform:translateY(-10px) scale(0.9);}
+  26%{opacity: 0; transform:translateY(10px) scale(0.9);}
+  55% {opacity: 1; transform: translateY(0px) scale(1);}
+}
+.bounceUp {
+    animation-name: bounceUp;
+    animation-duration:1.4s;
+    animation-iteration-count:infinite;
+    animation-timing-function:linear;
+}
+.up-head.first.bounceUp {
+    animation-name: bounceUp;
     animation-duration:1.4s;
     animation-delay:0.2s;
     animation-iteration-count:infinite;
     animation-timing-function:linear;
 }
-
 .arrow .up-head{
-    animation-name: bounceGamma;
+    animation-name: bounceUp;
     animation-duration:1.4s;
     animation-iteration-count:infinite;
     animation-timing-function:linear;
 }
 .arrow .up-head.third{
-    animation-name: bounceGamma;
+    animation-name: bounceUp;
     animation-duration:1.4s;
     animation-delay:0.2s;
     animation-iteration-count:infinite;
     animation-timing-function:linear;
 }
+/* END up-head */
 
+/* BEGIN down-head */
+@keyframes bounceDown {
+  0% {opacity: 1; transform: translateY(0px) scale(1);}
+  25%{opacity: 0; transform:translateY(10px) scale(0.9);}
+  26%{opacity: 0; transform:translateY(-10px) scale(0.9);}
+  55% {opacity: 1; transform: translateY(0px) scale(1);}
+}
+.bounceDown {
+    animation-name: bounceDown;
+    animation-duration:1.4s;
+    animation-iteration-count:infinite;
+    animation-timing-function:linear;
+}
 
-.down-head.first.bounceOmega {
-    animation-name: bounceOmega;
+.down-head.first.bounceDown {
+    animation-name: bounceDown;
     animation-duration:1.4s;
     animation-delay:0.2s;
     animation-iteration-count:infinite;
     animation-timing-function:linear;
 }
-
 .arrow .down-head{
-    animation-name: bounceOmega;
+    animation-name: bounceDown;
     animation-duration:1.4s;
     animation-iteration-count:infinite;
     animation-timing-function:linear;
 }
 .arrow .down-head.first{
-    animation-name: bounceOmega;
+    animation-name: bounceDown;
     animation-duration:1.4s;
     animation-delay:0.2s;
     animation-iteration-count:infinite;
     animation-timing-function:linear;
 }
+/* END down-head */
 
-
-/* up-right-head */
-
+/* BEGIN up-right-head */
 .up-right-head svg {
     transform: rotate(40deg);
 }
-
 .up-right-head.first
 {
     margin-left: 10px;
@@ -260,14 +235,12 @@ html body {
     26%{opacity: 0; transform:translateY(10px) translateX(-10px)scale(0.9);}
     55% {opacity: 1; transform: translateY(0px) scale(1);}
   }
-
 .bounceUpRight {
     animation-name: bounceUpRight;
     animation-duration:1.4s;
     animation-iteration-count:infinite;
     animation-timing-function:linear;
 }
-
 .up-right-head.first.bounceUpRight {
     animation-name: bounceUpRight;
     animation-duration:1.4s;
@@ -275,7 +248,6 @@ html body {
     animation-iteration-count:infinite;
     animation-timing-function:linear;
 }
-
 .arrow .up-right-head{
     animation-name: bounceUpRight;
     animation-duration:1.4s;
@@ -289,26 +261,20 @@ html body {
     animation-iteration-count:infinite;
     animation-timing-function:linear;
 }
+/* END up-right-head */
 
-/* up-right-head */
-
-/* down-right-head */
-
+/* BEGIN down-right-head */
 .down-right-head svg {
     transform: rotate(-40deg);
 }
-
-.down-right-head.first
-{
+.down-right-head.first{
     margin-left: 0px;
 }
-.down-right-head.second
-{
+.down-right-head.second{
     margin-top: 5px;
     margin-left: 5px;
 }
-.down-right-head.third
-{
+.down-right-head.third{
     margin-top: 10px;
     margin-left: 10px;
 }
@@ -318,14 +284,12 @@ html body {
     26%{opacity: 0; transform:translateY(-10px) translateX(-10px) scale(0.9);}
     55% {opacity: 1; transform: translateY(0px) scale(1);}
   }
-
 .bounceDownRight {
     animation-name: bounceDownRight;
     animation-duration:1.4s;
     animation-iteration-count:infinite;
     animation-timing-function:linear;
 }
-
 .up-right-head.third.bounceDownRight {
     animation-name: bounceDownRight;
     animation-duration:1.4s;
@@ -333,7 +297,6 @@ html body {
     animation-iteration-count:infinite;
     animation-timing-function:linear;
 }
-
 .arrow .down-right-head{
     animation-name: bounceDownRight;
     animation-duration:1.4s;
@@ -347,27 +310,21 @@ html body {
     animation-iteration-count:infinite;
     animation-timing-function:linear;
 }
+/* END down-right-head */
 
-/* down-right-head */
 
-
-/* up-left-head */
-
+/* BEGINup-left-head */
 .up-left-head svg {
     transform: rotate(-40deg);
 }
-
-.up-left-head.first
-{
+.up-left-head.first{
     margin-left: 0px;
 }
-.up-left-head.second
-{
+.up-left-head.second{
     margin-top: 5px;
     margin-left: 5px;
 }
-.up-left-head.third
-{
+.up-left-head.third{
     margin-top: 10px;
     margin-left: 10px;
 }
@@ -377,14 +334,12 @@ html body {
   26%{opacity: 0; transform:translateY(10px) translateX(10px) scale(0.9);}
   55% {opacity: 1; transform: translateY(0px) scale(1);}
   }
-
 .bounceUpLeft {
     animation-name: bounceUpLeft;
     animation-duration:1.4s;
     animation-iteration-count:infinite;
     animation-timing-function:linear;
 }
-
 .up-left-head.first.bounceUpLeft {
     animation-name: bounceUpLeft;
     animation-duration:1.4s;
@@ -392,7 +347,6 @@ html body {
     animation-iteration-count:infinite;
     animation-timing-function:linear;
 }
-
 .arrow .up-left-head{
     animation-name: bounceUpLeft;
     animation-duration:1.4s;
@@ -406,26 +360,20 @@ html body {
     animation-iteration-count:infinite;
     animation-timing-function:linear;
 }
+/* END up-left-head */
 
-/* up-left-head */
-
-/* down-left-head */
-
+/* BEGIN down-left-head */
 .down-left-head svg {
     transform: rotate(40deg);
 }
-
-.down-left-head.first
-{
+.down-left-head.first{
     margin-left: 10px;
 }
-.down-left-head.second
-{
+.down-left-head.second{
     margin-top: 5px;
     margin-left: 5px;
 }
-.down-left-head.third
-{
+.down-left-head.third{
     margin-top: 10px;
     margin-left: 0px;
 }
@@ -435,14 +383,12 @@ html body {
     26%{opacity: 0; transform: translateY(-10px) translateX(10px) scale(0.9);}
     55% {opacity: 1; transform: translateY(0px)  scale(1);}
   }
-
 .bounceDownLeft {
     animation-name: bounceDownLeft;
     animation-duration:1.4s;
     animation-iteration-count:infinite;
     animation-timing-function:linear;
 }
-
 .up-left-head.third.bounceDownLeft {
     animation-name: bounceDownRight;
     animation-duration:1.4s;
@@ -450,7 +396,6 @@ html body {
     animation-iteration-count:infinite;
     animation-timing-function:linear;
 }
-
 .arrow .down-left-head{
     animation-name: bounceDownLeft;
     animation-duration:1.4s;
@@ -464,5 +409,4 @@ html body {
     animation-iteration-count:infinite;
     animation-timing-function:linear;
 }
-
-/* down-left-head */
+/* ENDdown-left-head */
