@@ -1,0 +1,468 @@
+html, body {
+    height: 100%;
+}
+
+html body {
+    margin: 0%; 
+}
+
+#map{ 
+    height: 100%;
+    width: 100vw;
+    cursor: hand;
+}
+
+.fade-out {
+    animation: opacityPulse 1s ease-out;
+    animation-iteration-count: 1;
+    opacity: 0;
+}
+
+.fade-in {
+    animation: opacityPulse 1s ease-out;
+    animation-iteration-count: 1;
+    opacity: 1;
+}
+
+#map .moving-vehicle {
+	background: transparent;
+	border: 0px;
+}
+
+
+.arrow {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+}
+
+.right-head, 
+.left-head, 
+.up-head, 
+.down-head,
+.up-right-head,
+.down-right-head,
+.up-left-head,
+.down-left-head   {
+    position: absolute; 
+    /* bottom: 0;  */
+    margin-left:0px;
+    background-size: contain; 
+    /* top:15px; */
+}
+
+.right-head svg, 
+.left-head svg, 
+.up-head svg, 
+.down-head svg,
+.up-right-head svg,
+.down-right-head svg,
+.up-left-head svg,
+.down-left-head svg   {
+    width: 12px; 
+    height: 12px; 
+}
+
+.arrow svg  {
+    fill: currentColor;
+}
+
+.up-head.second, 
+.down-head.second{
+    margin-top: 8px;
+    margin-left: 0px;
+}
+.up-head.third, 
+.down-head.third{
+    margin-top: 16px;
+    margin-left: 0px;
+}
+
+.second{
+    margin-left: 8px;
+}
+.third{
+    margin-left: 16px;
+}
+
+
+@keyframes bounceAlpha {
+  0% {opacity: 1; transform: translateX(0px) scale(1);}
+  25%{opacity: 0; transform:translateX(10px) scale(0.9);}
+  26%{opacity: 0; transform:translateX(-10px) scale(0.9);}
+  55% {opacity: 1; transform: translateX(0px) scale(1);}
+}
+
+@keyframes bounceBeta {
+  0% {opacity: 1; transform: translateX(0px) scale(1);}
+  25%{opacity: 0; transform:translateX(-10px) scale(0.9);}
+  26%{opacity: 0; transform:translateX(10px) scale(0.9);}
+  55% {opacity: 1; transform: translateX(0px) scale(1);}
+}
+
+@keyframes bounceGamma {
+  0% {opacity: 1; transform: translateY(0px) scale(1);}
+  25%{opacity: 0; transform:translateY(-10px) scale(0.9);}
+  26%{opacity: 0; transform:translateY(10px) scale(0.9);}
+  55% {opacity: 1; transform: translateY(0px) scale(1);}
+}
+
+@keyframes bounceOmega {
+  0% {opacity: 1; transform: translateY(0px) scale(1);}
+  25%{opacity: 0; transform:translateY(10px) scale(0.9);}
+  26%{opacity: 0; transform:translateY(-10px) scale(0.9);}
+  55% {opacity: 1; transform: translateY(0px) scale(1);}
+}
+
+.bounceAlpha {
+    animation-name: bounceAlpha;
+    animation-duration:1.4s;
+    animation-iteration-count:infinite;
+    animation-timing-function:linear;
+}
+
+.bounceBeta {
+    animation-name: bounceBeta;
+    animation-duration:1.4s;
+    animation-iteration-count:infinite;
+    animation-timing-function:linear;
+}
+
+.bounceGamma {
+    animation-name: bounceGamma;
+    animation-duration:1.4s;
+    animation-iteration-count:infinite;
+    animation-timing-function:linear;
+}
+
+.bounceOmega {
+    animation-name: bounceOmega;
+    animation-duration:1.4s;
+    animation-iteration-count:infinite;
+    animation-timing-function:linear;
+}
+
+.right-head.first.bounceAlpha {
+    animation-name: bounceAlpha;
+    animation-duration:1.4s;
+    animation-delay:0.2s;
+    animation-iteration-count:infinite;
+    animation-timing-function:linear;
+}
+
+.arrow .right-head{
+    animation-name: bounceAlpha;
+    animation-duration:1.4s;
+    animation-iteration-count:infinite;
+    animation-timing-function:linear;
+}
+.arrow .right-head.first{
+    animation-name: bounceAlpha;
+    animation-duration:1.4s;
+    animation-delay:0.2s;
+    animation-iteration-count:infinite;
+    animation-timing-function:linear;
+}
+
+
+.left-head.third.bounceBeta {
+    animation-name: bounceBeta;
+    animation-duration:1.4s;
+    animation-delay:0.2s;
+    animation-iteration-count:infinite;
+    animation-timing-function:linear;
+}
+
+.arrow .left-head{
+    animation-name: bounceBeta;
+    animation-duration:1.4s;
+    animation-iteration-count:infinite;
+    animation-timing-function:linear;
+}
+.arrow .left-head.third{
+    animation-name: bounceBeta;
+    animation-duration:1.4s;
+    animation-delay:0.2s;
+    animation-iteration-count:infinite;
+    animation-timing-function:linear;
+}
+
+
+.up-head.first.bounceGamma {
+    animation-name: bounceGamma;
+    animation-duration:1.4s;
+    animation-delay:0.2s;
+    animation-iteration-count:infinite;
+    animation-timing-function:linear;
+}
+
+.arrow .up-head{
+    animation-name: bounceGamma;
+    animation-duration:1.4s;
+    animation-iteration-count:infinite;
+    animation-timing-function:linear;
+}
+.arrow .up-head.third{
+    animation-name: bounceGamma;
+    animation-duration:1.4s;
+    animation-delay:0.2s;
+    animation-iteration-count:infinite;
+    animation-timing-function:linear;
+}
+
+
+.down-head.first.bounceOmega {
+    animation-name: bounceOmega;
+    animation-duration:1.4s;
+    animation-delay:0.2s;
+    animation-iteration-count:infinite;
+    animation-timing-function:linear;
+}
+
+.arrow .down-head{
+    animation-name: bounceOmega;
+    animation-duration:1.4s;
+    animation-iteration-count:infinite;
+    animation-timing-function:linear;
+}
+.arrow .down-head.first{
+    animation-name: bounceOmega;
+    animation-duration:1.4s;
+    animation-delay:0.2s;
+    animation-iteration-count:infinite;
+    animation-timing-function:linear;
+}
+
+
+/* up-right-head */
+
+.up-right-head svg {
+    transform: rotate(40deg);
+}
+
+.up-right-head.first
+{
+    margin-left: 10px;
+}
+.up-right-head.second
+{
+    margin-top: 5px;
+    margin-left: 5px;
+}
+.up-right-head.third
+{
+    margin-top: 10px;
+    margin-left: 0px;
+}
+@keyframes bounceUpRight {
+    0% {opacity: 1; transform: translateY(0px) scale(1);}
+    25%{opacity: 0; transform: translateY(-10px) translateX(10px) scale(0.9);}
+    26%{opacity: 0; transform:translateY(10px) translateX(-10px)scale(0.9);}
+    55% {opacity: 1; transform: translateY(0px) scale(1);}
+  }
+
+.bounceUpRight {
+    animation-name: bounceUpRight;
+    animation-duration:1.4s;
+    animation-iteration-count:infinite;
+    animation-timing-function:linear;
+}
+
+.up-right-head.first.bounceUpRight {
+    animation-name: bounceUpRight;
+    animation-duration:1.4s;
+    animation-delay:0.2s;
+    animation-iteration-count:infinite;
+    animation-timing-function:linear;
+}
+
+.arrow .up-right-head{
+    animation-name: bounceUpRight;
+    animation-duration:1.4s;
+    animation-iteration-count:infinite;
+    animation-timing-function:linear;
+}
+.arrow .up-right-head.first{
+    animation-name: bounceUpRight;
+    animation-duration:1.4s;
+    animation-delay:0.2s;
+    animation-iteration-count:infinite;
+    animation-timing-function:linear;
+}
+
+/* up-right-head */
+
+/* down-right-head */
+
+.down-right-head svg {
+    transform: rotate(-40deg);
+}
+
+.down-right-head.first
+{
+    margin-left: 0px;
+}
+.down-right-head.second
+{
+    margin-top: 5px;
+    margin-left: 5px;
+}
+.down-right-head.third
+{
+    margin-top: 10px;
+    margin-left: 10px;
+}
+@keyframes bounceDownRight {
+    0% {opacity: 1; transform: translateY(0px) scale(1);}
+    25%{opacity: 0; transform:translateY(10px) translateX(10px) scale(0.9);}
+    26%{opacity: 0; transform:translateY(-10px) translateX(-10px) scale(0.9);}
+    55% {opacity: 1; transform: translateY(0px) scale(1);}
+  }
+
+.bounceDownRight {
+    animation-name: bounceDownRight;
+    animation-duration:1.4s;
+    animation-iteration-count:infinite;
+    animation-timing-function:linear;
+}
+
+.up-right-head.third.bounceDownRight {
+    animation-name: bounceDownRight;
+    animation-duration:1.4s;
+    animation-delay:0.2s;
+    animation-iteration-count:infinite;
+    animation-timing-function:linear;
+}
+
+.arrow .down-right-head{
+    animation-name: bounceDownRight;
+    animation-duration:1.4s;
+    animation-iteration-count:infinite;
+    animation-timing-function:linear;
+}
+.arrow .down-right-head.first{
+    animation-name: bounceDownRight;
+    animation-duration:1.4s;
+    animation-delay:0.2s;
+    animation-iteration-count:infinite;
+    animation-timing-function:linear;
+}
+
+/* down-right-head */
+
+
+/* up-left-head */
+
+.up-left-head svg {
+    transform: rotate(-40deg);
+}
+
+.up-left-head.first
+{
+    margin-left: 0px;
+}
+.up-left-head.second
+{
+    margin-top: 5px;
+    margin-left: 5px;
+}
+.up-left-head.third
+{
+    margin-top: 10px;
+    margin-left: 10px;
+}
+@keyframes bounceUpLeft {
+  0% {opacity: 1; transform: translateY(0px) scale(1);}
+  25%{opacity: 0; transform:translateY(-10px) translateX(-10px) scale(0.9);}
+  26%{opacity: 0; transform:translateY(10px) translateX(10px) scale(0.9);}
+  55% {opacity: 1; transform: translateY(0px) scale(1);}
+  }
+
+.bounceUpLeft {
+    animation-name: bounceUpLeft;
+    animation-duration:1.4s;
+    animation-iteration-count:infinite;
+    animation-timing-function:linear;
+}
+
+.up-left-head.first.bounceUpLeft {
+    animation-name: bounceUpLeft;
+    animation-duration:1.4s;
+    animation-delay:0.2s;
+    animation-iteration-count:infinite;
+    animation-timing-function:linear;
+}
+
+.arrow .up-left-head{
+    animation-name: bounceUpLeft;
+    animation-duration:1.4s;
+    animation-iteration-count:infinite;
+    animation-timing-function:linear;
+}
+.arrow .up-left-head.third{
+    animation-name: bounceUpLeft;
+    animation-duration:1.4s;
+    animation-delay:0.2s;
+    animation-iteration-count:infinite;
+    animation-timing-function:linear;
+}
+
+/* up-left-head */
+
+/* down-left-head */
+
+.down-left-head svg {
+    transform: rotate(40deg);
+}
+
+.down-left-head.first
+{
+    margin-left: 10px;
+}
+.down-left-head.second
+{
+    margin-top: 5px;
+    margin-left: 5px;
+}
+.down-left-head.third
+{
+    margin-top: 10px;
+    margin-left: 0px;
+}
+@keyframes bounceDownLeft {
+    0% {opacity: 1; transform: translateY(0px)  scale(1);}
+    25%{opacity: 0; transform: translateY(10px) translateX(-10px) scale(0.9);}
+    26%{opacity: 0; transform: translateY(-10px) translateX(10px) scale(0.9);}
+    55% {opacity: 1; transform: translateY(0px)  scale(1);}
+  }
+
+.bounceDownLeft {
+    animation-name: bounceDownLeft;
+    animation-duration:1.4s;
+    animation-iteration-count:infinite;
+    animation-timing-function:linear;
+}
+
+.up-left-head.third.bounceDownLeft {
+    animation-name: bounceDownRight;
+    animation-duration:1.4s;
+    animation-delay:0.2s;
+    animation-iteration-count:infinite;
+    animation-timing-function:linear;
+}
+
+.arrow .down-left-head{
+    animation-name: bounceDownLeft;
+    animation-duration:1.4s;
+    animation-iteration-count:infinite;
+    animation-timing-function:linear;
+}
+.arrow .down-left-head.first{
+    animation-name: bounceDownLeft;
+    animation-duration:1.4s;
+    animation-delay:0.2s;
+    animation-iteration-count:infinite;
+    animation-timing-function:linear;
+}
+
+/* down-left-head */
