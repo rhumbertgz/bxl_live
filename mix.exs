@@ -38,6 +38,7 @@ defmodule BxlLive.Mixfile do
       {:phoenix_live_reload, "~> 1.0", only: :dev},
       {:gettext, "~> 0.11"},
       {:cowboy, "~> 1.0"},
+      {:mivbm, git: "https://github.com/rhumbertgz/mivbm.git"},
     ]
   end
 end
