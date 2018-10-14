@@ -7,13 +7,13 @@ var NetworkMap = function() {
                 zoomDelta: 0.50,
                 zoomSnap: 0,
                 minZoom: 0,
-                maxZoom: 3.388077727750023 ,
+                maxZoom: 3.335486326753994 ,
                 touchZoom: true,
                 fullscreenControl: true,
             });
     this.lines = new Map() ;  
     this.factory = getIconFactory();   
-    this.map.setView([575.25, 400.5], 4);
+    this.map.setView([560, 400], 1.5);
     L.imageOverlay('/images/map.svg', [[0,0], [1000,1000]]).addTo(this.map); 
 };
 
