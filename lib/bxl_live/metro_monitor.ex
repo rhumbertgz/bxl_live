@@ -12,7 +12,7 @@ defmodule BxlLiveWeb.MetroMonitor do
   end
 
   def restore_state do
-    GenServer.call(:metro_monitor, :restore_state)
+    GenServer.cast(:metro_monitor, :restore_state)
   end
 
 
@@ -30,26 +30,23 @@ defmodule BxlLiveWeb.MetroMonitor do
     Logger.info("#{@module} initializing MIVBM monitor ...")
     MIVBM.monitor_lines(lines, self(), token)
     Logger.info("#{@module} started ...")
-    {:noreply, lines}
-  end
-
-  @impl true
-  def handle_call(:restore_state, _from, state) do
-    Logger.debug("#{@module}.restore_state")
-    {:reply, %{}, state}
+    {:noreply, %{}}
   end
 
   @impl true
   def handle_cast({:update_vehicle_positions, vehicles}, state) do
     Logger.debug("#{@module}.update_vehicle_positions - #{inspect vehicles}")
-    # __update_last_position(state, vehicles)
     BxlLiveWeb.Endpoint.broadcast("network:live", "update_vehicles", %{vehicles: vehicles})
+    state = Enum.reduce(vehicles, state, fn l, acc -> Map.put(acc, l.line, l) end)
     {:noreply, state}
   end
 
-  # defp __update_last_position(state, vehicles) do
-  #     # Map.put(state, vehicles.key, vehicles)
-  # end
-
+  @impl true
+  def handle_cast(:restore_state, state) do
+    vehicles = Map.values(state)
+    Logger.debug("#{@module}.restore_state - #{inspect vehicles}")
+    BxlLiveWeb.Endpoint.broadcast("network:live", "update_vehicles", %{vehicles: vehicles})
+    {:noreply, state}
+  end
 
 end
