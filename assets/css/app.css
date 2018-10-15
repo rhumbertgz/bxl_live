@@ -12,6 +12,12 @@ html body {
     cursor: hand;
 }
 
+#email{
+    height: 12px;
+    width: 12px;
+    margin-bottom: 2px
+}
+
 .fade-out {
     animation: opacityPulse 1s ease-out;
     animation-iteration-count: 1;

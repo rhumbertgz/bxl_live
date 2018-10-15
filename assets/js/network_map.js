@@ -14,7 +14,10 @@ var NetworkMap = function() {
     this.lines = new Map() ;  
     this.factory = getIconFactory();   
     this.map.setView([560, 400], 1.5);
-    L.imageOverlay('/images/map.svg', [[0,0], [1000,1000]]).addTo(this.map); 
+    L.imageOverlay('/images/map.svg', 
+                  [[0,0], [1000,1000]],
+                  {attribution: '&ensp; Developed by &nbsp; <a href="mailto:rhumbert@vub.be?Subject=Live%20Artifact" target="_top"><img id="email" src="/images/mail.svg"></img></a> &nbsp;<a href="https://soft.vub.ac.be">Software Languages Lab</a> &nbsp;  ',}
+                  ).addTo(this.map); 
 };
 
 NetworkMap.prototype.initialize = function (linesId) {   
