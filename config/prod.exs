@@ -8,7 +8,7 @@ use Mix.Config
 # with brunch.io to recompile .js and .css sources.
 config :bxl_live, BxlLiveWeb.Endpoint,
   http: [port: 8000],
-  debug_errors: true,
+  debug_errors: false,
   code_reloader: false,
   check_origin: false
 
