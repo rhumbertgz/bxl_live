@@ -11,8 +11,8 @@ defmodule BxlLiveWeb.MetroMonitor do
     GenServer.cast(:metro_monitor, {:update_map, node})
   end
 
-  def restore_state do
-    GenServer.cast(:metro_monitor, :restore_state)
+  def get_current_state do
+    GenServer.call(:metro_monitor, :get_current_state)
   end
 
 
@@ -42,11 +42,18 @@ defmodule BxlLiveWeb.MetroMonitor do
   end
 
   @impl true
-  def handle_cast(:restore_state, state) do
+  def handle_call(:get_current_state, _from, state) do
     vehicles = Map.values(state)
-    Logger.debug("#{@module}.restore_state - #{inspect vehicles}")
-    BxlLiveWeb.Endpoint.broadcast("network:live", "update_vehicles", %{vehicles: vehicles})
-    {:noreply, state}
+    Logger.debug("#{@module}.get_current_state - #{inspect vehicles}")
+    {:reply, %{vehicles: vehicles}, state}
   end
+
+
+  # def handle_cast(:restore_state, state) do
+  #   vehicles = Map.values(state)
+  #   Logger.debug("#{@module}.restore_state - #{inspect vehicles}")
+  #   BxlLiveWeb.Endpoint.broadcast("network:live", "update_vehicles", %{vehicles: vehicles})
+  #   {:noreply, state}
+  # end
 
 end

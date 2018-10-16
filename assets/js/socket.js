@@ -10,7 +10,8 @@ let channel = socket.channel("network:live", {})
 
 channel.join()
   .receive("ok", payload => { 
-    networkMap.initialize(["6"]);
+    console.log("Current state", payload); 
+    networkMap.initialize(payload.vehicles);
   })
   .receive("error", payload => { 
     console.log("Unable to join", payload); 

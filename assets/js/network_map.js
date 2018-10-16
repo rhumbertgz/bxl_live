@@ -20,11 +20,12 @@ var NetworkMap = function() {
                   ).addTo(this.map); 
 };
 
-NetworkMap.prototype.initialize = function (linesId) {   
+NetworkMap.prototype.initialize = function (vehicles) {   
     var lineLayers = this.lines;
-    linesId.forEach(function(id){
-        lineLayers.set(id, new L.FeatureGroup());
+    vehicles.forEach(function(x){
+        lineLayers.set(x.line, new L.FeatureGroup());
     });
+    this.update(vehicles);
 };
 
 NetworkMap.prototype.update = function (lines) {
