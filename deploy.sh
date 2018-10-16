@@ -18,4 +18,4 @@ cd ..
 
 mix phx.digest 
 
-MIX_ENV=prod  mix phx.server
+MIX_ENV=prod PORT=8000 mix phx.server
