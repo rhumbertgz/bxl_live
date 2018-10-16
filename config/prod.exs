@@ -10,6 +10,7 @@ config :bxl_live, BxlLiveWeb.Endpoint,
   http: [port: 8000],
   debug_errors: false,
   code_reloader: false,
+  code_reloading: false,
   check_origin: false
 
 
