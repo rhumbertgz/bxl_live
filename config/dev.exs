@@ -9,10 +9,10 @@ use Mix.Config
 config :bxl_live, BxlLiveWeb.Endpoint,
   http: [port: 8000],
   debug_errors: true,
-  code_reloader: true,
+  code_reloader: false,
   check_origin: false,
-  watchers: [node: ["node_modules/brunch/bin/brunch", "watch", "--stdin",
-                    cd: Path.expand("../assets", __DIR__)]]
+  # watchers: [node: ["node_modules/brunch/bin/brunch", "watch", "--stdin",
+  #                   cd: Path.expand("../assets", __DIR__)]]
 
 # ## SSL Support
 #
@@ -31,15 +31,15 @@ config :bxl_live, BxlLiveWeb.Endpoint,
 # different ports.
 
 # Watch static and templates for browser reloading.
-config :bxl_live, BxlLiveWeb.Endpoint,
-  live_reload: [
-    patterns: [
-      ~r{priv/static/.*(js|css|png|jpeg|jpg|gif|svg)$},
-      ~r{priv/gettext/.*(po)$},
-      ~r{lib/bxl_live_web/views/.*(ex)$},
-      ~r{lib/bxl_live_web/templates/.*(eex)$}
-    ]
-  ]
+# config :bxl_live, BxlLiveWeb.Endpoint,
+#   live_reload: [
+#     patterns: [
+#       ~r{priv/static/.*(js|css|png|jpeg|jpg|gif|svg)$},
+#       ~r{priv/gettext/.*(po)$},
+#       ~r{lib/bxl_live_web/views/.*(ex)$},
+#       ~r{lib/bxl_live_web/templates/.*(eex)$}
+#     ]
+#   ]
 
 # Do not include metadata nor timestamps in development logs
 config :logger, :console, format: "[$level] $message\n"
