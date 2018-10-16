@@ -17,3 +17,5 @@ node_modules/brunch/bin/brunch build --production
 cd ..
 
 mix phx.digest 
+
+MIX_ENV=prod  mix phx.server
