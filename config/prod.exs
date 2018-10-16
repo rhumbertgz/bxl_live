@@ -5,7 +5,7 @@ config :bxl_live, BxlLiveWeb.Endpoint,
   http: [port: 8000],
   debug_errors: false,
   code_reloader: false,
-  check_origin: false
+  check_origin: false,
   cache_static_manifest: "priv/static/cache_manifest.json"
 
 
