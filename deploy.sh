@@ -1,4 +1,7 @@
 #!/bin/bash
+rm -rf deps/
+rm -rf _build/
+rm mix.lock
 
 export MIX_ENV=prod
 
