@@ -82,28 +82,31 @@ IconFactory.prototype.upArrow = function (color) {
     </div` ;
 };
 
-IconFactory.prototype.buildIcon = function (vehicle) {
+IconFactory.prototype.buildIcon = function (vehicle,size) {
     // var color = this.getColor(vehicle.capacity);
-    var color = '#ffc266'
+    var color = '#000000';
+    var iconSize = [size,size];
+
     switch (vehicle.type) {
         case 1: // stationary
-            return L.icon.pulse({iconSize:[12,12], fillColor: color, color: color});
+            return L.icon.pulse({iconSize: iconSize, fillColor: '#FF3F44', color: '#FF3F44'});
         case 2: // moving right
             return  L.divIcon({
                 className: 'moving-vehicle',
-                iconSize: [12,12],
+                iconSize: iconSize,
                 html: this.rightArrow(color)
             });
         case 3: // moving left
+            // return L.icon.pulse({iconSize: iconSize, fillColor: color, color: color, shape: 1});
             return  L.divIcon({
                 className: 'moving-vehicle',
-                iconSize: [12,12],
+                iconSize: iconSize,
                 html: this.leftArrow(color)
             });
         case 4: // moving up
             return L.divIcon({
                 className: 'moving-vehicle',
-                iconSize: [12,12],
+                iconSize: iconSize,
                 fillColor: color, 
                 color: color,
                 html: this.upArrow(color)
@@ -111,7 +114,7 @@ IconFactory.prototype.buildIcon = function (vehicle) {
         case 5: // moving down
             return L.divIcon({
                 className: 'moving-vehicle',
-                iconSize: [12,12],
+                iconSize: iconSize,
                 fillColor: color, 
                 color: color,
                 html: this.downArrow(color    )
@@ -119,25 +122,25 @@ IconFactory.prototype.buildIcon = function (vehicle) {
         case 6: // moving up-right
             return  L.divIcon({
                 className: 'moving-vehicle',
-                iconSize: [12,12],
+                iconSize: iconSize,
                 html: this.upRightArrow(color)
             });
         case 7: // moving down-right
             return  L.divIcon({
                 className: 'moving-vehicle',
-                iconSize: [12,12],
+                iconSize: iconSize,
                 html: this.downRightArrow(color)
             }); 
         case 8: // moving up-left
             return  L.divIcon({
                 className: 'moving-vehicle',
-                iconSize: [12,12],
+                iconSize: iconSize,
                 html: this.upLeftArrow(color)
             }); 
         default: // moving down-left
             return  L.divIcon({
                 className: 'moving-vehicle',
-                iconSize: [12,12],
+                iconSize: iconSize,
                 html: this.downLeftArrow(color)
             });           
     }    
