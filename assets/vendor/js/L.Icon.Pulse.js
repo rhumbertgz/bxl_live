@@ -9,21 +9,29 @@
             color: 'red',
             animate: true,
             heartbeat: 1,
+            shape: 0,
         },
 
         initialize: function (options) {
             L.setOptions(this,options);
 
             // css
-            
+            var shapeStyle = '',
+                animation = '';
+            if (this.options.shape === 0) {
+              shapeStyle = ' leaflet-pulsing-icon ';
+              animation = ' pulsate ' + this.options.heartbeat + 's ease-out';
+            } else {
+             shapeStyle = ' leaflet-rect-fade-icon ';
+             animation = ' fadeIn 0s ease '
+            }
             // var uniqueClassName = 'lpi-'+ new Date().getTime()+'-'+Math.round(Math.random()*100000);
             var uniqueClassName = 'lpi';
             var before = ['background-color: '+this.options.fillColor,];
             var after = [
                 'box-shadow: 0 0 4px 2px '+this.options.color,
-                'animation: pulsate ' + this.options.heartbeat + 's ease-out',
+                'animation:'+ animation,
                 'animation-iteration-count: infinite',
-                // 'animation-delay: '+ (this.options.heartbeat + .1) + 's',
             ];
 
             if (!this.options.animate){
@@ -47,7 +55,7 @@
 
             // apply css class
 
-            this.options.className = this.options.className+' leaflet-pulsing-icon '+uniqueClassName;
+            this.options.className = this.options.className + shapeStyle + uniqueClassName;
 
             // initialize icon
             

@@ -15,7 +15,7 @@ exports.config = {
       order: {
         before: [
           "vendor/js/leaflet-1.3.4.js",
-          "vendor/js/leaflet.fullscreen.min.js"
+          "vendor/js/leaflet.fullscreen.min.js",
         ]
       }
     },
