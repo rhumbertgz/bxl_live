@@ -3,7 +3,7 @@ defmodule BxlLiveWeb.NetworkChannel do
   alias BxlLiveWeb.MetroMonitor
 
   def join("network:live", _message, socket) do
-    {:ok, MetroMonitor.get_current_state(), socket} #  {:ok, reply, socket}
+    {:ok, MetroMonitor.get_current_state(), socket}
   end
 
   def join("network:" <> _private_clluster_id, _params, _socket) do
