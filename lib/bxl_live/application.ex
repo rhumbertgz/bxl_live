@@ -5,13 +5,13 @@ defmodule BxlLive.Application do
   # for more information on OTP Applications
   def start(_type, args) do
     import Supervisor.Spec
-    metros = Keyword.get(args, :metros)
+    lines = Keyword.get(args, :lines)
     # Define workers and child supervisors to be supervised
     children = [
       # Start the endpoint when the application starts
       supervisor(BxlLiveWeb.Endpoint, []),
       # Start your own worker by calling: BxlLive.Worker.start_link(arg1, arg2, arg3)
-      supervisor(BxlLive.MetroSupervisor, [metros]),
+      supervisor(BxlLive.MetroSupervisor, [lines]),
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html

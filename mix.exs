@@ -18,7 +18,7 @@ defmodule BxlLive.Mixfile do
   # Type `mix help compile.app` for more information.
   def application do
     [
-      mod: {BxlLive.Application, [metros: [6]]},
+      mod: {BxlLive.Application, [lines: [1,2,3,4,5,6,12,33,50,82]]},
       extra_applications: [:logger, :runtime_tools]
     ]
   end
