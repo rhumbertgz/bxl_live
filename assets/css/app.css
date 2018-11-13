@@ -18,28 +18,17 @@ html body {
     margin-bottom: 2px
 }
 
-.fade-out {
-    animation: opacityPulse 1s ease-out;
-    animation-iteration-count: 1;
-    opacity: 0;
-}
-
-.fade-in {
-    animation: opacityPulse 1s ease-out;
-    animation-iteration-count: 1;
-    opacity: 1;
-}
-
 #map .moving-vehicle {
 	background: transparent;
 	border: 0px;
 }
 
 
-.arrow {
+.arrow,
+.arrow svg{
     position: absolute;
-    width: 20px;
-    height: 20px;
+    width: inherit;
+    height: inherit;
 }
 
 .right-head, 
@@ -50,6 +39,8 @@ html body {
 .down-right-head,
 .up-left-head,
 .down-left-head   {
+    width: inherit;
+    height: inherit;
     position: absolute; 
     margin-left:0px;
     background-size: contain; 
@@ -57,8 +48,8 @@ html body {
 
 .arrow svg  {
     fill: currentColor;
-    width: 12px; 
-    height: 12px; 
+    width: inherit; 
+    height: inherit; 
     margin-left:0px;
     background-size: contain; 
 }

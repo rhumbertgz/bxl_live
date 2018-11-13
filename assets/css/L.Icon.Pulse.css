@@ -1,6 +1,6 @@
 .leaflet-pulsing-icon {
     border-radius: 100%;
-    box-shadow: 1px 1px 8px 0 rgba(0,0,0,0.75);
+    transition: width .6s, height .6s;
 }
 
 .leaflet-pulsing-icon:after {
@@ -11,6 +11,20 @@
     position: absolute;
     margin: -100% 0 0 -100%;
 
+}
+
+.leaflet-rect-fade-icon {
+    -webkit-clip-path: polygon(100% 0%, 75% 50%, 100% 100%, 25% 100%, 0% 50%, 25% 0%);
+    clip-path: polygon(100% 0%, 75% 50%, 100% 100%, 25% 100%, 0% 50%, 25% 0%);
+    background: linear-gradient(266deg, #ebf2f1, #f4e216);
+    background-size: 400% 400%;
+    transition: width .6s, height .6s;
+}
+  
+@keyframes fadeIn {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
 }
 
 @keyframes pulsate {
