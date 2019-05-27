@@ -11,7 +11,7 @@ defmodule BxlLive.Application do
       # Start the endpoint when the application starts
       supervisor(BxlLiveWeb.Endpoint, []),
       # Start your own worker by calling: BxlLive.Worker.start_link(arg1, arg2, arg3)
-      supervisor(BxlLive.MetroSupervisor, [lines]),
+      supervisor(BxlLive.NetworkSupervisor, [lines]),
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html

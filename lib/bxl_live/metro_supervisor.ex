@@ -1,4 +1,4 @@
-defmodule BxlLive.MetroSupervisor do
+defmodule BxlLive.NetworkSupervisor do
   @moduledoc false
   use Supervisor
 
@@ -8,7 +8,7 @@ defmodule BxlLive.MetroSupervisor do
 
   def init(lines) do
     children = [
-      worker(BxlLiveWeb.MetroMonitor, [lines])
+      worker(BxlLiveWeb.NetworkMonitor, [lines])
     ]
     supervise children, strategy: :one_for_one
   end

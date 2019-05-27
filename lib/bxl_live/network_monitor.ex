@@ -1,18 +1,18 @@
-defmodule BxlLiveWeb.MetroMonitor do
+defmodule BxlLiveWeb.NetworkMonitor do
   use GenServer
   require Logger
   @module Atom.to_string(__MODULE__) |> String.split_at(7) |> elem(1)
 
   def start_link(lines) do
-    GenServer.start_link(__MODULE__, lines, name: :metro_monitor)
+    GenServer.start_link(__MODULE__, lines, name: :network_monitor)
   end
 
   def update_map(node) do
-    GenServer.cast(:metro_monitor, {:update_map, node})
+    GenServer.cast(:network_monitor, {:update_map, node})
   end
 
   def get_current_state do
-    GenServer.call(:metro_monitor, :get_current_state)
+    GenServer.call(:network_monitor, :get_current_state)
   end
 
 
