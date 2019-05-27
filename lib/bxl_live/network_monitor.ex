@@ -28,7 +28,7 @@ defmodule BxlLiveWeb.NetworkMonitor do
     Logger.info("#{@module} starting ...")
     token = Application.fetch_env!(:bxl_live, :token)
     Logger.info("#{@module} initializing MIVBM monitor ...")
-    MIVBM.monitor_lines(lines, self(), token)
+    MIVBM.monitor_lines(lines, token, self())
     Logger.info("#{@module} started ...")
     {:noreply, %{}}
   end
@@ -47,13 +47,5 @@ defmodule BxlLiveWeb.NetworkMonitor do
     Logger.debug("#{@module}.get_current_state - #{inspect vehicles}")
     {:reply, %{vehicles: vehicles}, state}
   end
-
-
-  # def handle_cast(:restore_state, state) do
-  #   vehicles = Map.values(state)
-  #   Logger.debug("#{@module}.restore_state - #{inspect vehicles}")
-  #   BxlLiveWeb.Endpoint.broadcast("network:live", "update_vehicles", %{vehicles: vehicles})
-  #   {:noreply, state}
-  # end
 
 end
