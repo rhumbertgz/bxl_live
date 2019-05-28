@@ -4,7 +4,7 @@ To start your Bxl-live server:
   * Set your STIB-MIVB Open Data token in the prod.secret.exs file. [`More info here`](https://opendata.stib-mivb.be)
     
     config :bxl_live,
-      token: "d42dd320a125a1615e7c73d707ebeb8d"
+      token: "Your STIB-MIVB Developer Token"
       
   * Start Phoenix endpoint with `deploy.sh`
 
